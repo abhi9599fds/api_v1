@@ -16,7 +16,6 @@ import com.api.acadio.api_v1.posts.PostModel;
 import com.api.acadio.api_v1.users.UserModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 public class ContestModel 
@@ -49,8 +48,8 @@ public class ContestModel
     @Column(nullable = true)
     private Date end_dt;
     
-    @ColumnDefault(value = "false")
-    private boolean endContest;
+    private boolean endContest=false;
+
     public Integer getId() {
         return id;
     }

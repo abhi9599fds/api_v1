@@ -53,7 +53,7 @@ public class UserController
         } 
         catch (Exception e) 
         {
-            return new ResponseEntity<MessageDto>(new MessageDto(e.getLocalizedMessage()), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<MessageDto>(new MessageDto(e.getMessage()), HttpStatus.BAD_REQUEST);
         }
         
     }

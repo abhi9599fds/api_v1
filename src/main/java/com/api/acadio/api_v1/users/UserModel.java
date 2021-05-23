@@ -38,10 +38,9 @@ public class UserModel
     private String profilePic;
     private String bio;
     private String socialHandle;
-    @ColumnDefault(value = "0")
-    private Integer followers;
-    @ColumnDefault(value = "0")
-    private Integer following;
+    
+    private Integer followers = 0;
+    private Integer following = 0;
 
     @OneToMany(mappedBy = "user")
     private List<CommentModel> comments;

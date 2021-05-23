@@ -17,7 +17,6 @@ import com.api.acadio.api_v1.like.LikeModel;
 import com.api.acadio.api_v1.users.UserModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import org.hibernate.annotations.ColumnDefault;
 
 
 
@@ -51,10 +50,17 @@ public class PostModel
     @OneToMany(mappedBy = "post")
     private List<LikeModel> likemodels;
     
-    @ColumnDefault(value = "0")
-    private Integer likes;
+    private Integer likes = 0;
 
     protected PostModel(){}
+
+    public UserModel getUser() {
+        return user;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
+    }
 
     public List<CommentModel> getComments() {
         return comments;
